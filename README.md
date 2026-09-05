@@ -17,41 +17,8 @@ An autonomous, closed-loop financial reconciliation system designed for high-vol
 
 ## System Architecture
 
-```
-                      +----------------------------------+
-                      | Raw Ingestion Data               |
-                      | (OMS + Settlement + Bank Feed)   |
-                      +----------------------------------+
-                                       |
-                                       v
-                      +----------------------------------+
-                      | Deterministic Matching Engine    |
-                      | (Tiers 0 - 4 + DPSS Solver)      |
-                      +----------------------------------+
-                                       |
-                   +-------------------+-------------------+
-                   |                                       |
-                   v                                       v
-       [Reconciled (1:1 & Bulk N:1)]              [Unmatched Exceptions]
-                   |                                       |
-                   v                                       v
-        Committed to Ledger                    +------------------------+
-                                               | LLM Diagnostician      |
-                                               | (Groq / Structured)    |
-                                               +------------------------+
-                                                           |
-                                                           v
-                                               +------------------------+
-                                               | Deterministic Policy   |
-                                               | Gate (Invariant Check) |
-                                               +------------------------+
-                                                           |
-                                               +-----------+-----------+
-                                               |                       |
-                                               v                       v
-                                        Committed Ledger       Quarantined Exception
-                                       (TDS Split Entries)     Ledger (Audit Trail)
-```
+<img width="900" height="1110" alt="Razor Arch" src="https://github.com/user-attachments/assets/aa1303f5-9a0d-4d5a-bd9a-067335f471e9" />
+
 
 ---
 
