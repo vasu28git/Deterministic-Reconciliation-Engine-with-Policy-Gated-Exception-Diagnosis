@@ -1,0 +1,14 @@
+# Razorpay Buildathon 2026 — Track 04: AI Finance Controller
+# Install: pip install -r requirements.txt
+
+# LLM client (Gemini)
+google-genai>=1.0.0
+
+# Structured output / data validation
+pydantic>=2.0.0
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# Interactive Dashboard (Optional)
+streamlit>=1.30.0
